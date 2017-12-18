@@ -31,10 +31,9 @@ def build_and_save(tax, filename):
 
 def consume():
     global processes
-    if len(processes) >= max_procs:
-        for p in processes:
-            p.join()
-        processes = []
+    for p in processes:
+        p.join()
+    processes = []
 
 
 samples = tqdm(taxonomy.samples.unique(), unit="sample(s)")
@@ -46,5 +45,6 @@ for s in samples:
     p = Process(target=build_and_save, args=(tax, filename))
     p.start()
     processes.append(p)
-    consume()
-join_procs()
+    if len(processes) >= max_procs:
+        consume()
+consume()
