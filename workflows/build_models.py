@@ -4,12 +4,10 @@ from os.path import isfile
 import micom
 from micom import Community
 import pandas as pd
-from tqdm import tqdm
-from multiprocessing import Process
+from micom.workflows import workflow
 
 micom.logger.file_logger("micom.log")
-max_procs = 6
-processes = []
+max_procs = 16
 
 taxonomy = pd.read_csv("species.csv").dropna(subset=["agora_id"])
 taxonomy["file"] = taxonomy.agora_id.apply(
@@ -24,27 +22,15 @@ taxonomy = taxonomy.rename(columns={
 })
 
 
-def build_and_save(tax, filename):
+def build_and_save(args):
+    s, tax = args
+    filename = "models/" + s + ".pickle"
+    if isfile(filename):
+        return
     com = Community(tax, id=s, progress=False)
     com.to_pickle(filename)
 
 
-def consume():
-    global processes
-    for p in processes:
-        p.join()
-    processes = []
-
-
-samples = tqdm(taxonomy.samples.unique(), unit="sample(s)")
-for s in samples:
-    filename = "models/" + s + ".pickle"
-    if isfile(filename):
-        continue
-    tax = taxonomy[taxonomy.samples == s]
-    p = Process(target=build_and_save, args=(tax, filename))
-    p.start()
-    processes.append(p)
-    if len(processes) >= max_procs:
-        consume()
-consume()
+samples = taxonomy.samples.unique()
+args = [(s, taxonomy[taxonomy.samples == s]) for s in samples]
+workflow(build_and_save, args, max_procs)
