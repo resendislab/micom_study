@@ -1,0 +1,372 @@
+,id,name,formula,weight
+0,2dmmq8_m,2-Demethylmenaquinone 8,C50H70O2,703.0895999999999
+1,2obut_m,2-Oxobutanoate,C4H5O3,101.0807
+2,Lcyst_m,L-cysteate(1-),C3H6NO5S,168.14844
+3,ac_m,acetate,C2H3O2,59.04402
+4,acald_m,acetaldehyde,C2H4O,44.05256
+5,acgam_m,N-acetyl-D-glucosamine,C8H15NO6,221.2078
+6,ade_m,Adenine,C5H5N5,135.1267
+7,akg_m,2-Oxoglutarate,C5H4O5,144.08226000000002
+8,ala_L_m,L-alanine,C3H7NO2,89.09318
+9,alaasp_m,L-alanyl-L-aspartate,C7H11N2O5,203.17264
+10,alagln_m,L-alanyl-L-glutamine,C8H15N3O4,217.22240000000002
+11,alaglu_m,L-alanyl-L-glutamate,C8H13N2O5,217.19921999999997
+12,alagly_m,L-alanylglycine,C5H10N2O3,146.1445
+13,alahis_m,L-alanyl-L-histidine,C9H14N4O3,226.23246
+14,alaleu_m,L-alanyl-L-leucine,C9H18N2O3,202.25082
+15,alathr_m,L-alanyl-L-threonine,C7H14N2O4,190.19706
+16,amp_m,AMP,C10H12N5O7P,345.20534100000003
+17,arab_L_m,L-arabinose,C5H10O5,150.12990000000002
+18,arbt_m,Arbutin,C12H16O7,272.25124
+19,arg_L_m,L-argininium(1+),C6H15N4O2,175.2089
+20,asn_L_m,L-asparagine,C4H8N2O3,132.11792
+21,asp_L_m,L-aspartate(1-),C4H6NO4,132.09474
+22,bhb_m,(R)-3-hydroxybutyrate,C4H7O3,103.09657999999999
+23,btn_m,Biotin,C10H15N2O3S,243.3027
+24,butso3_m,butanesulfonate,C4H9O3S,137.17746
+25,ca2_m,calcium(2+),Ca,40.078
+26,cd2_m,Cadmium,Cd,112.411
+27,cellb_m,cellobiose,C12H22O11,342.29648
+28,cgly_m,L-cysteinylglycine,C5H10N2O3S,178.2095
+29,chor_m,chorismate,C10H8O6,224.16692
+30,cl_m,Chloride,Cl,35.453
+31,co2_m,carbon dioxide,CO2,44.0095
+32,cobalt2_m,Co2+,Co,58.9332
+33,cro4_m,chromate,CrO4,115.99369999999999
+34,csn_m,cytosine,C4H5N3O,111.10199999999999
+35,cu2_m,Cu2+,Cu,63.546
+36,cys_L_m,L-cysteine,C3H7NO2S,121.15818
+37,cytd_m,Cytidine,C9H13N3O5,243.21662000000003
+38,dad_2_m,2-deoxyadenosine,C10H13N5O3,251.24192
+39,dcyt_m,Deoxycytidine,C9H13N3O4,227.21722000000003
+40,dgsn_m,Deoxyguanosine,C10H13N5O4,267.24132
+41,drib_m,2-deoxy-D-ribose,C5H10O4,134.1305
+42,ethso3_m,ethanesulfonate,C2H5O3S,109.12429999999999
+43,fe2_m,Fe2+,Fe,55.845
+44,fe3_m,Fe3+,Fe,55.845
+45,fol_m,Folate,C19H18N7O6,440.38952
+46,for_m,Formate,CH1O2,45.01744
+47,fru_m,D-Fructose,C6H12O6,180.15588
+48,fum_m,Fumarate,C4H2O4,114.05628
+49,gal_m,D-Galactose,C6H12O6,180.15588
+50,galt_m,galactitol,C6H14O6,182.17176
+51,gam_m,D-Glucosamine,C6H14NO5,180.17906
+52,gcald_m,glycolaldehyde,C2H4O2,60.051959999999994
+53,glc_D_m,D-glucose,C6H12O6,180.15588
+54,glcn_m,D-gluconate,C6H11O7,195.14733999999999
+55,gln_L_m,L-glutamine,C5H10N2O3,146.1445
+56,glu_L_m,L-glutamate(1-),C5H8NO4,146.12132
+57,gly_m,Glycine,C2H5NO2,75.0666
+58,glyasn_m,Glycyl-L-asparagine,C6H11N3O4,189.16924
+59,glyasp_m,Glycyl-L-aspartate,C6H9N2O5,189.14606
+60,glyc_m,Glycerol,C3H8O3,92.09382
+61,glycys_m,Gly-Cys,C5H10N2O3S,178.2095
+62,glygln_m,Glycyl-L-glutamine,C7H13N3O4,203.19582
+63,glyglu_m,Glycyl-L-glutamate,C7H11N2O5,203.17264
+64,glyleu_m,Glycylleucine,C8H16N2O3,188.22423999999998
+65,glymet_m,Glycyl-L-methionine,C7H14N2O3S,206.26265999999998
+66,glyphe_m,Glycylphenylalanine,C11H14N2O3,222.24046
+67,glypro_m,Glycylproline,C7H12N2O3,172.18178
+68,glytyr_m,Glycyl-L-tyrosine,C11H14N2O4,238.23986000000002
+69,gthrd_m,Reduced glutathione,C10H16N3O6S,306.31554
+70,gua_m,Guanine,C5H5N5O,151.1261
+71,h_m,proton,H,1.00794
+72,h2_m,Hydrogen,H2,2.01588
+73,h2o_m,Water,H2O,18.01528
+74,h2s_m,Hydrogen sulfide,H2S,34.08088
+75,hexs_m,hexanesulfonate,C6H13O3S,165.23062
+76,hg2_m,Hg2+,Hg,200.59
+77,his_L_m,L-histidine,C6H9N3O2,155.15456
+78,hxan_m,Hypoxanthine,C5H4N4O,136.11146000000002
+79,ile_L_m,L-isoleucine,C6H13NO2,131.17291999999998
+80,ind3ac_m,indole-3-acetate,C10H8NO2,174.17602
+81,ins_m,Inosine,C10H12N4O5,268.22608
+82,isetac_m,Isethionic acid,C2H5O4S,125.1237
+83,k_m,potassium,K,39.0983
+84,lac_D_m,(R)-lactate,C3H5O3,89.07
+85,lac_L_m,(S)-lactate,C3H5O3,89.07
+86,leu_L_m,L-leucine,C6H13NO2,131.17291999999998
+87,lys_L_m,L-lysinium(1+),C6H15N2O2,147.1955
+88,mal_L_m,(S)-malate(2-),C4H4O5,132.07156
+89,malt_m,Maltose,C12H22O11,342.29648
+90,man_m,D-Mannose,C6H12O6,180.15588
+91,met_D_m,D-Methionine,C5H10NO2S,148.2034
+92,met_L_m,L-methionine,C5H11NO2S,149.21134
+93,metala_m,L-methionyl-L-alanine,C8H16N2O3S,220.28923999999998
+94,metsox_R_L_m,L-methionine-R-sulfoxide,C5H11NO3S,165.21074
+95,metsox_S_L_m,L-Methionine Sulfoxide,C5H11NO3S,165.21074
+96,mg2_m,magnesium,Mg,24.305
+97,mn2_m,Mn2+,Mn,54.938049
+98,mnl_m,D-Mannitol,C6H14O6,182.17176
+99,mops_m,3-(n-Morpholino)Propanesulfonic Acid,C7H14NO4S,208.25536
+100,mqn8_m,Menaquinone 8,C51H72O2,717.11618
+101,mso3_m,methanesulfonate,CH3O3S,95.09772
+102,na1_m,Sodium,Na,22.98977
+103,nac_m,Nicotinate,C6H4NO2,122.10146
+104,nh4_m,Ammonium,H4N,18.03846
+105,no2_m,Nitrite,NO2,46.0055
+106,no3_m,Nitrate,NO3,62.0049
+107,o2_m,O2,O2,31.9988
+108,orn_m,Ornithine,C5H13N2O2,133.16892
+109,pb_m,Lead,Pb,207.2
+110,phe_L_m,L-phenylalanine,C9H11NO2,165.18913999999998
+111,pi_m,hydrogenphosphate,HO4P,95.97930099999999
+112,pnto_R_m,(R)-Pantothenate,C9H16NO5,218.22704
+113,ppa_m,propionate,C3H5O2,73.0706
+114,ppi_m,Diphosphate,HO7P2,174.951262
+115,pro_L_m,L-proline,C5H9NO2,115.13046
+116,ptrc_m,Putrescine,C4H14N2,90.16736
+117,pydam_m,Pyridoxamine,C8H13N2O2,169.20101999999997
+118,pydx_m,Pyridoxal,C8H9NO3,167.16196
+119,pydxn_m,Pyridoxine,C8H11NO3,169.17784
+120,q8_m,Ubiquinone-8,C49H74O4,727.1094600000001
+121,rib_D_m,D-ribose,C5H10O5,150.12990000000002
+122,salcn_m,Salicin,C13H18O7,286.27782
+123,sbt_D_m,D-glucitol,C6H14O6,182.17176
+124,ser_L_m,L-serine,C3H7NO3,105.09258
+125,sheme_m,Siroheme,C42H36FeN4O16,908.59744
+126,so4_m,sulfate,O4S,96.0626
+127,spmd_m,Spermidine,C7H22N3,148.26968
+128,succ_m,Succinate,C4H4O4,116.07216
+129,sucr_m,Sucrose,C12H22O11,342.29648
+130,sulfac_m,sulfoacetate,C2H2O5S,138.09928
+131,taur_m,Taurine,C2H7NO3S,125.14688
+132,thr_L_m,L-threonine,C4H9NO3,119.11916
+133,thymd_m,Thymidine,C10H14N2O5,242.22856000000002
+134,tre_m,Trehalose,C12H22O11,342.29648
+135,trp_L_m,L-tryptophan,C11H12N2O2,204.22518
+136,tsul_m,thiosulfate(2-),O3S2,112.12819999999999
+137,tyr_L_m,L-tyrosine,C9H11NO3,181.18854
+138,ura_m,uracil,C4H4N2O2,112.08676
+139,uri_m,Uridine,C9H12N2O6,244.20138
+140,val_L_m,L-valine,C5H11NO2,117.14634
+141,xan_m,Xanthine,C5H4N4O2,152.11086
+142,xyl_D_m,aldehydo-D-xylose,C5H10O5,150.12990000000002
+143,zn2_m,Zinc,Zn,65.409
+144,26dap_M_m,"meso-2,6-Diaminoheptanedioate",C7H14N2O4,190.19706
+145,3mop_m,3-methyl-2-oxopentanoate,C6H9O3,129.13386
+146,4hbz_m,4-hydroxybenzoate,C7H5O3,137.1128
+147,adocbl_m,Adenosylcobalamin,C72H100CoN18O17P,1579.581761
+148,cbl1_m,Cob(I)alamin,C62H88CoN13O14P,1329.347781
+149,cbl2_m,Cob(II)alamin,C62H92CoN13O14P,1333.379541
+150,etoh_m,ethanol,C2H6O,46.06844
+151,glyb_m,glycine betaine,C5H11NO2,117.14634
+152,lcts_m,Lactose,C12H22O11,342.29648
+153,malthx_m,Maltohexaose,C36H62O31,990.85888
+154,malttr_m,maltotriose,C18H32O16,504.43708000000004
+155,nmn_m,NMN,C11H14N2O8P,333.211221
+156,pheme_m,Protoheme,C34H30FeN4O4,614.4714
+157,pullulan1200_m,"pullulan (n=1200 repeat units, alpha-1,4 and alph-1,6 bounds)",C7200H12002O6001,194586.73528
+158,ribflv_m,Riboflavin,C17H20N4O6,376.36389999999994
+159,strch1_m,"starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]})",C66H112O56,1801.56188
+160,strch2_m,"starch, structure 2 (1,6-{2[1,4-Glc], [1,4-Glc]})",C18H32O16,504.43708000000004
+161,thm_m,Thiamin,C12H17N4OS,265.35458000000006
+162,tym_m,tyraminium,C8H12NO,138.18698
+163,ala_D_m,D-alanine,C3H7NO2,89.09318
+164,ddca_m,laurate,C12H23O2,199.30981999999997
+165,kesto_m,"Kestose (2 fru, 1 glc inulin-type fructo-oligosaccharide)",C18H32O16,504.43708000000004
+166,kestopt_m,"Kestopentaose (4 fru, 1 glc inulin-type fructo-oligosaccharide)",C30H52O26,828.71828
+167,kestottr_m,"Kestotetraose (3 fru, 1 glc inulin-type fructo-oligosaccharide)",C24H42O21,666.57768
+168,mqn7_m,Menaquinone 7,C46H64O2,648.99916
+169,ser_D_m,D-serine,C3H7NO3,105.09258
+170,urea_m,Urea,CH4N2O,60.05526
+171,4abz_m,4-Aminobenzoate,C7H6NO2,136.12804
+172,chol_m,Choline,C5H14NO,104.17075999999999
+173,cit_m,Citrate,C6H5O7,189.09969999999998
+174,glyc3p_m,Glycerol 3-phosphate,C3H7O6P,170.057841
+175,hdca_m,Hexadecanoate (n-C16:0),C16H31O2,255.41613999999998
+176,ocdca_m,octadecanoate (n-C18:0),C18H35O2,283.46930000000003
+177,pppn_m,Phenylpropanoate,C9H9O2,149.16656
+178,raffin_m,Raffinose,C18H32O16,504.43708000000004
+179,ttdca_m,tetradecanoate (n-C14:0),C14H27O2,227.36298
+180,12dgr180_m,"1,2-Diacyl-sn-glycerol (dioctadecanoyl, n-C18:0)",C39H76O5,625.01774
+181,acac_m,acetoacetate,C4H5O3,101.0807
+182,arsenb_m,Arsenobetaine,C5H12AsO2,179.06918
+183,but_m,butyrate,C4H7O2,87.09718
+184,etha_m,etha[c],C2H8NO,62.09102
+185,pyr_m,pyruvate,C3H3O3,87.05412
+186,arabttr_m,Arabinotriose,C15H26O13,414.35914
+187,lanost_m,lanosterol,C30H50O,426.7174
+188,alltn_m,Allantoin,C4H6N4O3,158.11544
+189,12ppd_S_m,"(S)-propane-1,2-diol",C3H8O2,76.09442
+190,Lcystin_m,L-cystine,C6H12N2O4S2,240.30048
+191,dextrin_m,Dextrin,C36H62O31,990.85888
+192,gthox_m,Oxidized glutathione,C20H30N6O12S2,610.6152
+193,mantr_m,"mannotriose (beta-1,4)",C18H32O16,504.43708000000004
+194,n2_m,Nitrogen,N2,28.0134
+195,rbflvrd_m,Reduced riboflavin,C17H22N4O6,378.37978
+196,stys_m,Stachyose,C24H42O21,666.57768
+197,Ser_Thr_m,protein-linked serine or threonine residue (O-glycosylation site),XH,
+198,T_antigen_m,T antigen (core 1),C14H24NO10X,
+199,Tn_antigen_m,Tn antigen,C8H14NO5X,
+200,acgal_m,N-acetyl-D-galactosamine,C8H15NO6,221.2078
+201,acnam_m,N-acetylneuraminate,C11H18NO9,308.26192000000003
+202,chtbs_m,"N,N-diacetylchitobiose",C16H28N2O11,424.40031999999997
+203,core2_m,Core 2,C22H37N2O15X,
+204,core3_m,Core 3,C16H27N2O10X,
+205,core4_m,Core 4,C24H40N3O15X,
+206,core5_m,Core 5,C16H27N2O10X,
+207,core6_m,Core 6,C16H27N2O10X,
+208,core7_m,Core 7,C16H27N2O10X,
+209,core8_m,Core 8,C14H24NO10X,
+210,dsT_antigen_m,disialyl-T antigen,C36H56N3O26X,
+211,f1a_m,F1alpha,C22H37N2O15X,
+212,gncore1_m,"GlcNAc-alpha-1,4-Core 1",C22H37N2O15X,
+213,gncore2_m,"GlcNAc-alpha-1,4-Core 2",C30H50N3O20X,
+214,sT_antigen_m,sialyl-T antigen,C25H40N2O18X,
+215,sTn_antigen_m,sialyl-Tn antigen,C19H30N2O13X,
+216,melib_m,Melibiose,C12H22O11,342.29648
+217,pime_m,Pimelate,C7H10O4,158.1519
+218,4abut_m,4-Aminobutanoate,C4H9NO2,103.11976
+219,aso3_m,arsenite,AsO3,122.9198
+220,aso4_m,arsenate,AsO4,138.9192
+221,indole_m,Indole,C8H7N,117.14788
+222,oxa_m,oxalate(2-),C2O4,88.019
+223,15dap_m,"1,5-Diaminopentane",C5H16N2,104.19394000000001
+224,Tyr_ggn_m,Tyr-194 of apo-glycogenin protein (primer for glycogen synthesis),XOH,
+225,cellul_m,"Cellulose, chain length 500 glc_D assumed, DOI: 10.1002/anie.200460587",C3000H5002O2501,81088.31528000001
+226,fecrm_m,Ferrichrome,C27H42FeN9O12,740.52048
+227,glygn2_m,"glycogen, structure 2 (glycogenin-1,6-{7[1,4-Glc], 4[1,4-Glc]})",C66H111O56X,
+228,glygn4_m,"glycogen, structure 4 (glycogenin-1,6-{2[1,4-Glc], [1,4-Glc]})",C18H31O16X,
+229,glygn5_m,"glycogen, structure 5 (glycogenin-2[1,4-Glc])",C12H21O11X,
+230,mobd_m,Molybdate,MoO4,159.9376
+231,xylan_m,"Oat spelt xylan, MW 79200 (DOI: 10.1002/masy.200551405) = 528 xyl_D",C2640H4226O2113,69774.53464
+232,2ddglcn_m,2-Dehydro-3-deoxy-D-gluconate,C6H9O6,177.13206
+233,arab_D_m,D-Arabinose,C5H10O5,150.12990000000002
+234,chols_m,Choline sulfate,C5H13NO4S,183.22602
+235,crn_m,L-Carnitine,C7H15NO3,161.19889999999998
+236,gsn_m,Guanosine,C10H13N5O5,283.24072
+237,gtp_m,GTP,C10H12N5O14P3,519.148663
+238,tma_m,trimethylamine,C3H10N,60.1182
+239,glutar_m,Glutarate,C5H6O4,130.09874
+240,Cit_Mg_m,Citrate-Mg,C6H5O7Mg,213.4047
+241,ctbt_m,crotonobetaine,C7H13NO2,143.18362
+242,gbbtn_m,gamma-butyrobetaine,C7H15NO2,145.1995
+243,fuc_L_m,L-fucose,C6H12O5,164.15648
+244,adn_m,Adenosine,C10H13N5O4,267.24132
+245,din_m,Deoxyinosine,C10H12N4O4,252.22668000000002
+246,duri_m,Deoxyuridine,C9H12N2O5,228.20198
+247,inulin_m,"Chicory inulin, 30 monosaccharide units (29 fru, 1 glc) on average",C180H302O151,4882.23328
+248,isobut_m,"Isobutyrate, 2-Methylpropanoate",C4H7O2,87.09718
+249,isocapr_m,Isocaproate,C6H11O2,115.15034
+250,isoval_m,"Isovalerate, 3-Methylbutanoate",C5H9O2,101.12376
+251,ocdcea_m,octadecenoate (n-C18:1),C18H33O2,281.45342
+252,amylopect900_m,"Amylopectin, 900 repeat units",C5400H9002O4501,145944.55528
+253,amylose300_m,"amylose (n=300 repeat units, alpha-1,4-glc)",C1800H3002O1501,48660.19528
+254,arabinoxyl_m,"Arabinoxylan, 30 xyl_D, 18 arab_L, 3 gal, 3 glc_D",C276H446O223,7332.36064
+255,galur_m,D-Galacturonate,C6H9O7,193.13146
+256,glcur_m,D-glucuronate,C6H9O7,193.13146
+257,glyclt_m,glycolate,C2H3O3,75.04342
+258,ncam_m,Nicotinamide,C6H6N2O,122.12464
+259,rmn_m,L-Rhamnose,C6H12O5,164.15648
+260,meoh_m,methanol,CH4O1,32.04186
+261,pac_m,phenylacetate,C8H7O2,135.13998
+262,pect_m,pectins,C2535H3509O2535,74542.46496
+263,xyluglc_m,"Xyluglucan, PMID:16663672, Fry SC 1989. 600 glc_D, 360 xyl_D, 108 gal, 60 fuc_L, 6 arab_L",C6438H10610O5245,171935.983
+264,13ppd_m,"Propane-1,3-diol",C3H8O2,76.09442
+265,ni2_m,nickel,Ni,58.6934
+266,actn_R_m,(R)-Acetoin,C4H8O2,88.10512
+267,inost_m,myo-inositol,C6H12O6,180.15588
+268,2mbut_m,2-methylbutyrate,C5H9O2,101.12376
+269,34dhpha_m,"(3,4-dihydroxyphenyl)acetate",C8H7O4,167.13878
+270,4hphac_m,4-hydroxyphenylacetate,C8H7O3,151.13938000000002
+271,4mcat_m,4-Methylcatechol,C7H8O2,124.13722
+272,5aptn_m,5-Aminopentanoate,C5H11NO2,117.14634
+273,ch4s_m,Methanethiol,CH4S,48.107459999999996
+274,ind3ppa_m,Indole-3-propionate,C11H10NO2,188.2026
+275,pcresol_m,p-Cresol,C7H7O,107.12988
+276,phpyr_m,keto-phenylpyruvate,C9H7O3,163.15008
+277,no_m,Nitric oxide,NO,30.0061
+278,2hyoxplac_m,2-Hydroxyphenylacetate,C8H7O3,151.13938000000002
+279,btd_RR_m,R_R__2_3_Butanediol,C4H10O2,90.121
+280,3hcinnm_m,3-hydroxycinnamic acid,C9H7O3,163.15008
+281,3hphac_m,3-Hydroxyphenylacetate,C8H7O3,151.13938000000002
+282,3hpppn_m,3-(3-hydroxy-phenyl)propionate,C9H9O3,165.16595999999998
+283,4hoxpacd_m,(4-hydroxyphenyl)acetaldehyde,C8H8O2,136.14792
+284,HC00319_m,Malonate,C3H2O4,102.04558
+285,cynt_m,Cyanate,CNO,42.0168
+286,dhcinnm_m,"2,3-dihydroxicinnamic acid",C9H7O4,179.14948
+287,dhpppn_m,"3-(2,3-Dihydroxyphenyl)propanoate",C9H9O4,181.16536
+288,fuc1p_L_m,L-Fucose 1-phosphate,C6H11O8P,242.120501
+289,g6p_m,D-Glucose 6-phosphate,C6H11O9P,258.119901
+290,galct_D_m,D-Galactarate,C6H8O8,208.12292
+291,galctn_D_m,D-Galactonate,C6H11O7,195.14733999999999
+292,glcr_m,D-glucarate(2-),C6H8O8,208.12292
+293,man6p_m,D-Mannose 6-phosphate,C6H11O9P,258.119901
+294,diact_m,Diacetyl,C4H6O2,86.08924
+295,dms_m,Dimethyl sulfide,C2H6S,62.13404
+296,dmso_m,Dimethyl sulfoxide,C2H6OS,78.13344000000001
+297,tmao_m,Trimethylamine N-oxide,C3H9NO,75.10966
+298,btoh_m,butanol,C4H10O,74.1216
+299,lmn2_m,Laminaribiose,C12H22O11,342.29648
+300,lmn30_m,"laminarin (n=30 repeat units, beta -1,3 glc)",C180H302O151,4882.23328
+301,2omfuc_m,2-o-methylfucose (rare sugar in rhamnogalacturonan II),C7H14O5,178.18306
+302,2omxyl_m,2-O-methylxylose (rare sugar in rhamnogalacturonan II),C6H12O5,164.15648
+303,3ddlhept_m,3-deoxy-d-lyxo-heptulosaric acid (rare sugar in rhamnogalacturonan II),C7H9O8,221.14156
+304,acerA_m,Aceric acid (3-C-carboxy-5-deoxy-l-xylose) (rare sugar in rhamnogalacturonan II),C6H9O6,177.13206
+305,acgalglcur_m,Dimer GalNAc-GlcA,C14H22NO12,396.32398
+306,acgalidour_m, Dimer GalNAc-IdoA,C14H22NO12,396.32398
+307,acgalidour2s_m, Dimer GalNAc-IdoA2S,C14H21NO15S,475.37924
+308,apio_D_m,D-Apiose (rare sugar in rhamnogalacturonan II),C5H10O5,150.12990000000002
+309,arabinan101_m,"Arabinan, polymer of 1,5-a-L-linked arabinofuranose units substituted by 1,3 or 1,2 linked branches, MW ~ 15000 Da (REF: www.meg... <Preview truncated at 128 characters>",C509H812O410,13491.64758
+310,arabinogal_m,"Larch arabinogalactan, gal/ara 6:1, small amount of glcur, MW ~ 116000",C3862H6376O3218,104298.01804
+311,cspg_a_m,chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan,C45H66N2O45S3X,
+312,cspg_a_degr_m,Dimer GalNAc4S-GlcA,C14H21NO15S,475.37924
+313,cspg_ab_rest_m,"Not degradable product CSABCPASE_A/B, Gal4S-Gal-Xyl-L-Ser-protein",C17H28O17SX,
+314,cspg_b_m,chondroitin sulfate B / dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan,C45H65N2O48S4X,
+315,cspg_b_degr_m,Dimer GalNAc4S-IdoA2S,C14H20NO18S2,554.4345
+316,cspg_c_m,chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan,C45H66N2O45S3X,
+317,cspg_c_degr_m,Dimer GalNAc6S-GlcA,C14H21NO15S,475.37924
+318,cspg_c_rest_m,"Not degradable product CSABCPASE_C, Gal6S-Gal-Xyl-L-Ser-protein",C17H28O17SX,
+319,dextran40_m,"Dextran 40, 1,6-alpha-D-Glucan",C480H800O400,12971.248
+320,gam26s_m,"Glucosamine 2,6-sulfate",C6H11NO11S2,337.28164
+321,ha_m,hyaluronan,C28H40N2O22,756.6174000000001
+322,ha_deg1_m,hyaluronan degradation product 1,C22H33N2O16,581.50122
+323,ha_pre1_m,"hyaluronan biosynthesis, precursor 1",C14H20NO11,378.30870000000004
+324,homogal_m,"Homogalacturonan, 100 galacturonate residues. Assumed to be methylated/ acetylated in every 5th residue. Citrus HG consists of 7... <Preview truncated at 128 characters>",C660H840O660,19333.3356
+325,hspg_m,heparan sulfate proteoglycan,C79H113N5O101S12X,
+326,hspg_degr_1_m,"Product 1 HEPARL1_e, IdoA-GlcN2,6diS-GlcA-GlcN2,3,6triS",C24H33O36N2S5,1085.83562
+327,hspg_degr_10_m,"Product AS3TASE_HS2, GlcN2S-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C43H66N2O38SX,
+328,hspg_degr_11_m,"Product GAM2STASE_HS3, GlcN-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C43H67N2O35X,
+329,hspg_degr_12_m,"Product GLCNACASE_HS2, GlcA-GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",C37H56NO31X,
+330,hspg_degr_13_m,"Product GLCAASE_HS, GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",C31H49NO25X,
+331,hspg_degr_14_m,"Product GLCNACASE_HS3, IdoA-Gal-Gal-Xyl-L-Ser (protein)",C23H36O20X,
+332,hspg_degr_15_m,"Product IDOURASE_HS3, Gal-Gal-Xyl-L-Ser (protein)",C17H29O14X,
+333,hspg_degr_2_m,"Product 2 HEPARL1_e, IdoA2S-GlcN2,6diS-IdoA2S-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C49H71N2O56S5X,
+334,hspg_degr_3_m,"Product IDOURASE_HS1, GlcN2,6diS-GlcA-GlcN2,3,6triS",C18H26O30N2S5,910.7194400000001
+335,hspg_degr_4_m,"Product AS6TASE_HS1, GlcN2S-GlcA-GlcN2,3diS",C18H28O24N2S3,752.6089199999999
+336,hspg_degr_5_m,"Product AS3TASE_HS1, GlcN2S-GlcA-GlcN2S",C18H29O21N2S2,673.55366
+337,hspg_degr_6_m,"Product GAM2STASE_HS2, GlcN-GlcA-GlcN",C18H31O15N2,515.44314
+338,hspg_degr_7_m,"Product IS2TASE_HS1, IdoA-GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C49H71N2O50S3X,
+339,hspg_degr_8_m,"Product IDOURASE_HS2, GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C43H64N2O44S3X,
+340,hspg_degr_9_m,"Product AS6TASE_HS2, GlcN2S-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",C43H65N2O41S2X,
+341,hspg_rest_m,"Undegradable product GALASE_HS, Xyl-L-Ser (protein)",C5H9O4X,
+342,idour_m,L-iduronate,C6H9O7,193.13146
+343,kdo_m,3-Deoxy-D-manno-2-octulosonate,C8H13O8,237.18401999999998
+344,levan1000_m,"Levan, 1000 fructose units",C6000H10002O5001,162158.61528
+345,levanb_m,Levanbiose,C12H22O11,342.29648
+346,levanttr_m,Levantriose,C18H32O16,504.43708000000004
+347,levantttr_m,Levantetraose,C24H42O21,666.57768
+348,mannan_m,"Alpha-mannan, yeast, has a MW of about 25000 (PMID: 5461381), equals ~ 140 mannose units. ID according to iMM904",C840H1402O701,22717.69928
+349,pecticgal_m,"Pectic galactan (potato), gal: arab-L: rmn: galur = 78: 9: 4: 9 (www.megazyme.com). Assumed to consist of 100 sugars per macromo... <Preview truncated at 128 characters>",C597H971O503,16196.795839999999
+350,rhamnogalurI_m,"Potato rhamnogalacturonan I, MW assumed ~200000, 62 galur, 20 rmn, 12 gal, 3 arab-L, 1 xyl-D (www.megazyme.com, PMID: 16661590)",C5840H7862O5281,162559.74368
+351,rhamnogalurII_m,"Wine rhamnogalacturonan II, MW ~ 5-10 kDa, 37% galur, 16% rmn, 3% fuc-L, 11% arab-L, 6% gal, 5% glcur, 4% 2omfuc, 3% 2omxyl, 6% ... <Preview truncated at 128 characters>",C317H445O273,8623.7614
+352,xtsn_m,xanthosine,C10H12N4O6,284.22548
+353,cinnm_m,trans-Cinnamate,C9H7O2,147.15068
+354,sel_m,selenate,O4Se,142.95759999999999
+355,selni_m,selenite,SeO3,126.95819999999999
+356,so3_m,Sulfite,O3S,80.0632
+357,idon_L_m,L-Idonate,C6H11O7,195.14733999999999
+358,starch1200_m,"starch n=1200 repeat units (300 repeat units amylose, 900 repeat units amylopectin, corresponds to potatoe starch)",C7200H12002O6001,194586.73528
+359,dpcoa_m,Dephospho-CoA,C21H33N7O13P2S,685.5383420000001
+360,n2o_m,Nitrous oxide,N2O,44.0128
+361,ch4_m,Methane,CH4,16.04246
+362,fald_m,formaldehyde,CH2O,30.025979999999997
+363,hco3_m,Bicarbonate,CHO3,61.016839999999995
+364,lyx_L_m,L-Lyxose,C5H10O5,150.12990000000002
+365,ahcys_m,S-Adenosyl-L-homocysteine,C14H20N6O5S,384.4108
+366,oaa_m,Oxaloacetate,C4H2O5,130.05568
+367,tet_m,Tetrathionate,O6S4,224.25639999999999
+368,dtmp_m,dTMP,C10H13N2O8P,320.192581
+369,ispre_m,Isoprene,C5H8,68.11702
+370,bglc_m,beta-glucans,C1200000H2000002O1000001,32428138.01528
