@@ -2,6 +2,7 @@
 
 import pandas as pd
 import networkx as nx
+import nxviz
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,15 +17,18 @@ normalized.index = ko.index
 ko["norm_change"] = normalized
 
 
-pos = ko[ko.change.abs() > 0.01]
-pos["change"] = pos.change.abs()
+pos = ko[ko.norm_change.abs() > 0.5]
+pos = pos[pos.knocked != pos.genus]
 graph = nx.from_pandas_dataframe(pos,
                                  "knocked", "genus", "norm_change")
 
-nx.write_gexf(graph, "interactions.gexf")
-
-mean_change = ko.groupby(["knocked", "genus"]).norm_change.mean().reset_index()
-change_mat = mean_change.pivot("knocked", "genus", "norm_change").replace(np.nan, 0)
-sns.clustermap(change_mat, cmap="seismic", figsize=(20, 20), vmin=-1, vmax=1)
-plt.savefig("mean_change.png")
-plt.close()
+for idx, _ in graph.nodes(data=True):
+    graph.node[idx]['degree'] = float(graph.degree(idx))
+circos = nxviz.CircosPlot(graph, node_labels=True, rotate_labels=True,
+                          edge_cmap="bwr",
+                          edge_color="norm_change", node_color="degree",
+                          figsize=(9, 7.5))
+#circos.figure.set_dpi(200)
+circos.draw()
+plt.tight_layout(rect=[0.05, 0.15, 0.7, 0.8])
+plt.savefig("circos.svg")

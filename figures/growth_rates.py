@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import LogFormatterMathtext
 import seaborn as sns
 import joypy as jp
 import pickle
@@ -21,10 +22,13 @@ rates.growth_rate /= community_mass
 rates["log_rates"] = np.log10(rates.growth_rate)
 rates.loc[rates.growth_rate <= 0, "log_rates"] = -18
 
-g = jp.joyplot(rates,
-               by="tradeoff", column="log_rates",
-               color="cornflowerblue")
-plt.xlabel("$\log_{10}\,\mu$ [1/h]")
+fig, axes = jp.joyplot(rates,
+                       by="tradeoff", column="log_rates",
+                       color="cornflowerblue")
+lf = LogFormatterMathtext()
+xax = axes[-1].xaxis
+xax.set_ticklabels(lf(10.0**ex) for ex in xax.get_ticklocs())
+plt.xlabel("growth rate [1/h]")
 plt.ylabel("tradeoff")
 plt.savefig("dists.svg")
 plt.close()
@@ -39,10 +43,13 @@ plt.close()
 
 pos = rates.query("growth_rate > 1e-6 and tradeoff == 0.5")
 o = pos.groupby("compartments").log_rates.mean().sort_values().index
-g = sns.stripplot("log_rates", "compartments", data=pos, order=o, alpha=0.33)
-g.figure.set_figwidth(5)
-g.figure.set_figheight(10)
-plt.xlabel("$\log_{10}\,\mu$ [1/h]")
+ax = sns.stripplot("log_rates", "compartments", data=pos,
+                   order=o, alpha=0.33)
+xax = ax.xaxis
+xax.set_ticklabels(lf(10.0**ex) for ex in xax.get_ticklocs())
+ax.figure.set_figwidth(5)
+ax.figure.set_figheight(10)
+plt.xlabel("growth rate [1/h]")
 plt.ylabel("")
 plt.tight_layout()
 plt.savefig("gcs.svg", width=10, height=20)
