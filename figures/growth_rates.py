@@ -8,7 +8,7 @@ import pickle
 
 community_mass = 200
 
-with open("../tradeoff.pickle", "rb") as pick:
+with open("../results/tradeoff.pickle", "rb") as pick:
     solutions = pickle.load(pick)
 
 
@@ -43,12 +43,12 @@ plt.close()
 
 pos = rates.query("growth_rate > 1e-6 and tradeoff == 0.5")
 o = pos.groupby("compartments").log_rates.mean().sort_values().index
-ax = sns.stripplot("log_rates", "compartments", data=pos,
+ax = sns.stripplot("compartments", "log_rates", data=pos,
                    order=o, alpha=0.33)
-xax = ax.xaxis
+xax = ax.yaxis
 xax.set_ticklabels(lf(10.0**ex) for ex in xax.get_ticklocs())
-ax.figure.set_figwidth(5)
-ax.figure.set_figheight(10)
+ax.figure.set_figwidth(10)
+ax.figure.set_figheight(5)
 plt.xlabel("growth rate [1/h]")
 plt.ylabel("")
 plt.tight_layout()
