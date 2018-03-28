@@ -44,15 +44,18 @@ plt.close()
 pos = rates.query("growth_rate > 1e-6 and tradeoff == 0.5")
 o = pos.groupby("compartments").log_rates.mean().sort_values().index
 ax = sns.stripplot("compartments", "log_rates", data=pos,
-                   order=o, alpha=0.33)
-xax = ax.yaxis
-xax.set_ticklabels(lf(10.0**ex) for ex in xax.get_ticklocs())
-ax.figure.set_figwidth(10)
+                   order=o, alpha=0.25, jitter=True)
+yax = ax.yaxis
+yax.set_ticklabels(lf(10.0**ex) for ex in yax.get_ticklocs())
+ax.xaxis.set_tick_params(rotation=90)
+ax.figure.set_figwidth(12)
 ax.figure.set_figheight(5)
-plt.xlabel("growth rate [1/h]")
-plt.ylabel("")
+sns.despine(left=True, bottom=True)
+plt.grid(axis="x", color="gainsboro")
+plt.ylabel("growth rate [1/h]")
+plt.xlabel("")
 plt.tight_layout()
-plt.savefig("gcs.svg", width=10, height=20)
+plt.savefig("gcs.svg")
 plt.close()
 
 fig = plt.figure()
@@ -60,4 +63,13 @@ community_growth = rates[rates.tradeoff == 0.5].groupby("sample"). \
                    apply(lambda df: sum(df.abundance * df.growth_rate))
 sns.distplot(community_growth)
 plt.savefig("community_growth.svg")
+plt.close()
+
+fig = plt.figure(figsize=(8, 8))
+rs = rates[(rates.growth_rate > 1e-6) & (rates.tradeoff != "none")]
+g = sns.jointplot(np.log10(rs.abundance), rs.log_rates, kind="kde",
+                  joint_kws={"n_levels": 100}, stat_func=None)
+g.ax_joint.set_xlabel("log abundance")
+g.ax_joint.set_ylabel("log growth rate")
+plt.savefig("rate_vs_abundance.png", dpi=300)
 plt.close()

@@ -9,6 +9,10 @@ import matplotlib.pyplot as plt
 samples = ["ERR260275", "ERR260214", "ERR260174"]
 
 
+def direction(els, rid):
+    return els[els.reaction == rid].direction.unique()[0]
+
+
 elast = []
 for sa in samples:
     e = pd.read_csv("../results/" + sa + ".csv")
@@ -32,13 +36,13 @@ plt.close()
 
 for sa in samples:
     e = elast[elast.id == sa].copy()
-    e.elasticity = e.elasticity.abs()
-    e = e[(e.elasticity > 0.5) & (e.norm_elasticity > 0.5)]
+    e = e[(e.elasticity.abs() > 0.5) & (e.norm_elasticity.abs() > 0.5)]
     graph = nx.from_pandas_edgelist(e, source="effector", target="reaction",
                                     edge_attr="elasticity")
     for idx, _ in graph.nodes(data=True):
         if idx.startswith("EX_"):
-            cl = "exchange flux"
+            d = direction(e, idx)
+            cl = "import flux" if d == "forward" else "export flux"
         elif idx[0].isupper():
             cl = "abundance"
         else:
@@ -46,7 +50,8 @@ for sa in samples:
         graph.node[idx]["class"] = cl
 
     circos = nxviz.CircosPlot(graph, node_labels=True, rotate_labels=True,
-                              edge_color="elasticity", node_color="class",
+                              edge_color="elasticity", edge_cmap="bwr",
+                              edge_limits=(-150, 150), node_color="class",
                               node_grouping="class", node_order="class",
                               figsize=(20, 18))
     circos.draw()
