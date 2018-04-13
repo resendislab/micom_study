@@ -1,10 +1,7 @@
 import pandas as pd
 import seaborn as sns
-import numpy as np
-from scipy.stats import mannwhitneyu, ttest_ind
-from statsmodels.sandbox.stats.multicomp import multipletests
 import matplotlib.pyplot as plt
-from matplotlib.ticker import LogFormatterMathtext
+from sklearn.manifold import TSNE
 
 sample_keep = ["run_accession", "subset", "status", "type"]
 
@@ -47,4 +44,21 @@ mat = media.pivot("id", "sample", "flux")
 mat = mat.apply(lambda x: x / x.abs().max(), axis=1)
 g = sns.clustermap(mat, cmap="seismic", figsize=(40, 42))
 plt.savefig("media.png")
+plt.close()
+
+fluxes = pd.read_csv("../results/min_media_fluxes.csv")
+fluxes = fluxes.melt(id_vars=["sample", "compartment"], var_name="reaction",
+                     value_name="flux")
+fluxes = fluxes[fluxes.reaction.str.startswith("EX_") &
+                (fluxes.compartment != "medium")].dropna()
+fluxes["taxa"] = fluxes.compartment + "_" + fluxes["sample"]
+mat = fluxes.pivot("taxa", "reaction", "flux").fillna(0.0)
+taxa = mat.index.str.split("_").str[0]
+tsne = TSNE(n_components=2).fit_transform(mat)
+tsne = pd.DataFrame(tsne, columns=["x", "y"], index=mat.index)
+tsne["taxa"] = taxa
+g = sns.FacetGrid(tsne, hue="taxa", size=10, aspect=1)
+gm = g.map(plt.scatter, "x", "y", alpha=0.25)
+gm.add_legend(ncol=3, fontsize="small")
+plt.savefig("individual_media.png")
 plt.close()

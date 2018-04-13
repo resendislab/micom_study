@@ -33,9 +33,11 @@ plt.ylabel("tradeoff")
 plt.savefig("dists.svg")
 plt.close()
 
-non_zero = rates.groupby(["sample", "tradeoff"]).growth_rate. \
-           apply(lambda x: sum(x > 1e-6) / len(x)).reset_index(name="non_zero")
-g = sns.boxplot("tradeoff", "non_zero", data=non_zero, color="skyblue")
+non_zero = rates.groupby(["sample", "tradeoff"]). \
+           apply(lambda df: df.abundance[df.growth_rate > 1e-6].sum() / df.abundance.sum()).reset_index(name="non_zero")
+g = sns.boxplot("tradeoff", "non_zero", data=non_zero, color="w", fliersize=0)
+g = sns.stripplot("tradeoff", "non_zero", data=non_zero, color="k",
+                  jitter=True, size=3, alpha=0.5)
 plt.xlabel("tradeoff")
 plt.ylabel("fraction growing")
 plt.savefig("non_zero.svg")

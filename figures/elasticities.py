@@ -37,6 +37,7 @@ plt.close()
 for sa in samples:
     e = elast[elast.id == sa].copy()
     e = e[(e.elasticity.abs() > 0.5) & (e.norm_elasticity.abs() > 0.5)]
+    e.elasticity = e.elasticity.abs()
     graph = nx.from_pandas_edgelist(e, source="effector", target="reaction",
                                     edge_attr="elasticity")
     for idx, _ in graph.nodes(data=True):
