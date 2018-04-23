@@ -2,6 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
+from adjustText import adjust_text
 
 sample_keep = ["run_accession", "subset", "status", "type"]
 
@@ -59,6 +60,10 @@ tsne = pd.DataFrame(tsne, columns=["x", "y"], index=mat.index)
 tsne["taxa"] = taxa
 g = sns.FacetGrid(tsne, hue="taxa", size=10, aspect=1)
 gm = g.map(plt.scatter, "x", "y", alpha=0.25)
-gm.add_legend(ncol=3, fontsize="small")
-plt.savefig("individual_media.png")
+means = tsne.groupby(taxa).agg("mean").reset_index()
+texts = means.apply(lambda df: plt.text(df.x, df.y, df.taxa, alpha=0.5),
+                    axis=1)
+texts = adjust_text(texts, force_text=(0.02, 0.5),
+                    arrowprops=dict(arrowstyle='-|>', alpha=0.5))
+plt.savefig("individual_media.png", dpi=200)
 plt.close()
