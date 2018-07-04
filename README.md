@@ -21,13 +21,13 @@ pip install --user -r requirements.txt
 
 See each subfolder for detailed desription of contained files.
 
-[*figures*](/figures)
+[*figures*](/figures)<br>
 Scripts to reproduce the figures in the publication.
 
-[*results*](/results)
+[*results*](/results)<br>
 Intermediate results required for figures.
 
-[*workflows*](/workflows)
+[*workflows*](/workflows)<br>
 Long running parallel analyses that produce the results provided in the
 previous folder.
 
