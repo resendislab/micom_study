@@ -2,9 +2,9 @@
 
 This repository contains additional matrials for the following preprint:
 
-> Micom: metagenome-scale modeling to infer metabolic interactions in the microbiota.
-> Christian Diener and Osbaldo Resendis-Antonio
-> https://doi.org/10.1101/361907
+*Micom: metagenome-scale modeling to infer metabolic interactions in the microbiota.*<br>
+Christian Diener and Osbaldo Resendis-Antonio<br>
+https://doi.org/10.1101/361907
 
 Project to study the approaches from micom in a metagenomic shotgun data set
 of 186 individuals.
