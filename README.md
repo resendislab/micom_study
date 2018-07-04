@@ -33,14 +33,14 @@ previous folder.
 
 ### Scripts
 
-**genera.py**
+**genera.py**<br>
 Reads the genus-level abundances and combines them with the AGORA models
-for each genus.
+for each genus.<br>
 Output: `genera.csv`
 
-**taxa_stats.py**
+**taxa_stats.py**<br>
 Counts the fraction of reads assigned to each taxonomic rank and the fraction
-of reads that has at least one represenative in the AGORA models.
+of reads that has at least one represenative in the AGORA models.<br>
 Output: a text table
 
 ### Files
