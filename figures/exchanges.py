@@ -10,28 +10,29 @@ SCFAs = {"butyrate": "EX_but_", "acetate": "EX_ac_", "propionate": "EX_ppa_"}
 
 
 def box_jitter(x, y, **kwargs):
-    sns.boxplot(x=x, y=y, **kwargs)
-    sns.stripplot(x=x, y=y, **kwargs)
+    sns.boxplot(x=x, y=y, color="white")
+    sns.stripplot(x=x, y=y, color="black")
 
 
 def export_rates_plot(fluxes, groups, samples):
     dfs = []
     for name, filt in groups.items():
-        df = fluxes[fluxes.reaction.str.contains(filt)]
+        df = fluxes[fluxes.reaction.str.contains(filt)].copy()
         res = samples.copy()
         df = df.groupby(["sample", "compartment"]).tot_flux.sum().reset_index()
-        res["production"] = df[df.tot_flux < 0].groupby("compartment").tot_flux.sum()
-        res["consumption"] = df[df.tot_flux > 0].groupby("compartment").tot_flux.sum()
-        res["net"] = df[df.tot_flux > 0].groupby("compartment").tot_flux.sum()
-        res = res.melt(id_vars=["sample", "status", "type", "subset"],
-                       var_name="class", value_name="flux")
+        res["flux"] = df.groupby("sample").tot_flux.sum().abs()
+        res["metabolite"] = name
         dfs.append(res)
     fluxes = pd.concat(dfs)
-    fluxes.status[fluxes.status == "ND"] = ""
+    fluxes.loc[fluxes.status == "ND", "status"] = ""
     fluxes["name"] = fluxes.status + " " + fluxes.type.fillna("")
-    print(fluxes)
-    grid = sns.FacetGrid(fluxes, row="class", col="subset")
-    g = grid.map(box_jitter, "name", "flux")
+    fluxes = fluxes.sort_values("name")
+    grid = sns.FacetGrid(fluxes, col="subset", row="metabolite",
+                         sharey=False, sharex=False)
+    g = grid.map(box_jitter, "name", "flux", color="white")
+    for ax in g.axes.flat:
+        for label in ax.get_xticklabels():
+            label.set_rotation(45)
     return g
 
 
@@ -60,18 +61,52 @@ fluxes["taxa"] = fluxes.compartment + "_" + fluxes["sample"]
 
 samples = pd.read_csv("../recent.csv")[
     ["run_accession", "status", "subset", "type"]]
+samples = samples.rename(columns={"run_accession": "sample"})
+samples.index = samples["sample"]
 genera = pd.read_csv("../genera.csv")[["samples", "name", "reads"]]
-totals = genera.groupby("samples").reads.sum().reset_index().reads
+totals = genera.groupby("samples").reads.sum()
 genera["relative"] = genera.reads / totals[genera.samples].values
 fluxes = pd.merge(fluxes, genera, left_on=["sample", "compartment"],
                   right_on=["samples", "name"])
 fluxes["tot_flux"] = fluxes.flux * fluxes.relative
-samples = samples.rename(columns={"run_accession": "sample"})
-samples.index = samples["sample"]
-fig = plt.figure(figsize=(16, 12))
 plt.tight_layout()
+export_rates_plot(fluxes[fluxes.tot_flux < 0], SCFAs, samples)
+plt.savefig("scfas_prod.svg")
+plt.close()
+
+export_rates_plot(fluxes[fluxes.tot_flux > 0], SCFAs, samples)
+plt.savefig("scfas_consumption.svg")
+plt.close()
+
 export_rates_plot(fluxes, SCFAs, samples)
-fig.savefig("scfas.svg")
+plt.savefig("scfas_net.svg")
+plt.close()
+
+scfa = []
+for name, filt in SCFAs.items():
+    fl = fluxes[fluxes.reaction.str.contains(filt)]
+    fl["metabolite"] = name
+    scfa.append(fl)
+    mat = fl.pivot("sample", "name", "tot_flux")
+    mat = mat.loc[:, mat.abs().mean() > 1].fillna(0)
+    sns.clustermap(mat, cmap="seismic", center=0, figsize=(mat.shape[1]/3, 6),
+                   yticklabels=False)
+    plt.savefig(name + ".svg")
+    plt.close()
+scfa = pd.concat(scfa)
+ord = scfa.groupby(["compartment"]).tot_flux.apply(lambda x: x.abs().mean())
+ord = ord.sort_values(ascending=False)
+plt.figure(figsize=(6, 4))
+plt.axhline(0, c="black")
+ax = sns.pointplot(x="compartment", y="tot_flux", hue="metabolite",
+                   data=scfa[scfa.name.isin(ord.index[ord > 1])], ci="sd",
+                   order=ord.index[ord > 1], join=False, dodge=True)
+ax.grid(axis="x", color="gainsboro")
+ax.xaxis.set_tick_params(rotation=90)
+sns.despine(left=True, bottom=True)
+plt.xlabel("")
+plt.tight_layout()
+plt.savefig("scfas.svg")
 plt.close()
 
 
