@@ -6,16 +6,33 @@ from adjustText import adjust_text
 
 sample_keep = ["run_accession", "subset", "status", "type"]
 
+SCFAs = {"butyrate": "EX_but_", "acetate": "EX_ac_", "propionate": "EX_ppa_"}
 
-def export_rates_plot(data, subset, filter):
-    subset = data[data.subset == subset]
-    filtered = subset[subset.name.str.contains(filter)]
-    log_fluxes = filtered.groupby(["sample", "type"]).flux.apply(
-        lambda x: x.abs().sum() + 1e-6
-    ).reset_index()
-    pl = sns.stripplot(x="type", y="flux", data=log_fluxes,
-                       jitter=True, order=["CTRL", "metformin-", "metformin+"])
-    return pl
+
+def box_jitter(x, y, **kwargs):
+    sns.boxplot(x=x, y=y, **kwargs)
+    sns.stripplot(x=x, y=y, **kwargs)
+
+
+def export_rates_plot(fluxes, groups, samples):
+    dfs = []
+    for name, filt in groups.items():
+        df = fluxes[fluxes.reaction.str.contains(filt)]
+        res = samples.copy()
+        df = df.groupby(["sample", "compartment"]).tot_flux.sum().reset_index()
+        res["production"] = df[df.tot_flux < 0].groupby("compartment").tot_flux.sum()
+        res["consumption"] = df[df.tot_flux > 0].groupby("compartment").tot_flux.sum()
+        res["net"] = df[df.tot_flux > 0].groupby("compartment").tot_flux.sum()
+        res = res.melt(id_vars=["sample", "status", "type", "subset"],
+                       var_name="class", value_name="flux")
+        dfs.append(res)
+    fluxes = pd.concat(dfs)
+    fluxes.status[fluxes.status == "ND"] = ""
+    fluxes["name"] = fluxes.status + " " + fluxes.type.fillna("")
+    print(fluxes)
+    grid = sns.FacetGrid(fluxes, row="class", col="subset")
+    g = grid.map(box_jitter, "name", "flux")
+    return g
 
 
 media = pd.read_csv("../results/minimal_media.csv", index_col=0).fillna(0.0)
@@ -27,19 +44,6 @@ media = pd.merge(media, metabolites, on="id")
 samples = pd.read_csv("../recent.csv")[sample_keep]
 samples = samples.rename(columns={"run_accession": "sample"})
 media = pd.merge(media, samples, on="sample")
-
-fig = plt.figure(figsize=(16, 3))
-plt.tight_layout()
-combinations = [("MHD", "acetate"), ("MHD", "butyrate"),
-                ("SWE", "acetate"), ("SWE", "butyrate")]
-for i, comb in enumerate(combinations):
-    ax = plt.subplot(1, 4, i+1)
-    plt.yscale("log")
-    export_rates_plot(media, comb[0], comb[1])
-    plt.xlabel("")
-    plt.ylabel("")
-fig.savefig("exports.svg")
-plt.close()
 
 mat = media.pivot("id", "sample", "flux")
 mat = mat.apply(lambda x: x / x.abs().max(), axis=1)
@@ -53,6 +57,24 @@ fluxes = fluxes.melt(id_vars=["sample", "compartment"], var_name="reaction",
 fluxes = fluxes[fluxes.reaction.str.startswith("EX_") &
                 (fluxes.compartment != "medium")].dropna()
 fluxes["taxa"] = fluxes.compartment + "_" + fluxes["sample"]
+
+samples = pd.read_csv("../recent.csv")[
+    ["run_accession", "status", "subset", "type"]]
+genera = pd.read_csv("../genera.csv")[["samples", "name", "reads"]]
+totals = genera.groupby("samples").reads.sum().reset_index().reads
+genera["relative"] = genera.reads / totals[genera.samples].values
+fluxes = pd.merge(fluxes, genera, left_on=["sample", "compartment"],
+                  right_on=["samples", "name"])
+fluxes["tot_flux"] = fluxes.flux * fluxes.relative
+samples = samples.rename(columns={"run_accession": "sample"})
+samples.index = samples["sample"]
+fig = plt.figure(figsize=(16, 12))
+plt.tight_layout()
+export_rates_plot(fluxes, SCFAs, samples)
+fig.savefig("scfas.svg")
+plt.close()
+
+
 mat = fluxes.pivot("taxa", "reaction", "flux").fillna(0.0)
 taxa = mat.index.str.split("_").str[0]
 tsne = TSNE(n_components=2).fit_transform(mat)

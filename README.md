@@ -6,9 +6,6 @@ This repository contains additional matrials for the following preprint:
 Christian Diener and Osbaldo Resendis-Antonio<br>
 https://doi.org/10.1101/361907
 
-Project to study the approaches from micom in a metagenomic shotgun data set
-of 186 individuals.
-
 All scripts are provided as Python 3 code. libraries required to reproduce
 figures and data processing csan be installed using the provided requirements
 file:
