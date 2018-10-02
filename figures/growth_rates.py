@@ -34,13 +34,26 @@ plt.savefig("dists.svg")
 plt.close()
 
 non_zero = rates.groupby(["sample", "tradeoff"]). \
-           apply(lambda df: df.abundance[df.growth_rate > 1e-6].sum() / df.abundance.sum()).reset_index(name="non_zero")
+           apply(lambda df: (df.growth_rate > 1e-6).sum()).reset_index(name="non_zero")
+n_genus = rates.groupby("sample").compartments.nunique()
+plt.axhline(n_genus.mean(), color="k", linestyle="dashed")
 g = sns.boxplot("tradeoff", "non_zero", data=non_zero, color="w", fliersize=0)
 g = sns.stripplot("tradeoff", "non_zero", data=non_zero, color="k",
-                  jitter=True, size=3, alpha=0.5)
+                  jitter=0.3, size=3, alpha=0.25)
 plt.xlabel("tradeoff")
-plt.ylabel("fraction growing")
+plt.ylabel("no. genera growing")
 plt.savefig("non_zero.svg")
+plt.close()
+
+non_zero = rates.groupby(["sample", "tradeoff"]). \
+           apply(lambda df: (df.growth_rate > 1e-6).sum() / df.shape[0]). \
+           reset_index(name="non_zero")
+g = sns.boxplot("tradeoff", "non_zero", data=non_zero, color="w", fliersize=0)
+g = sns.stripplot("tradeoff", "non_zero", data=non_zero, color="k",
+                  jitter=0.3, size=3, alpha=0.25)
+plt.xlabel("tradeoff")
+plt.ylabel("perrcent genera growing")
+plt.savefig("percent_growing.svg")
 plt.close()
 
 pos = rates.query("growth_rate > 1e-6 and tradeoff == 0.5")
